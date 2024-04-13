@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Determinante 3x3</title>
+  <script>
+    function calcularDeterminante() {
+      // Obtendo os valores dos inputs
+      var a = parseFloat(document.getElementById("a").value);
+      var b = parseFloat(document.getElementById("b").value);
+      var c = parseFloat(document.getElementById("c").value);
+      var d = parseFloat(document.getElementById("d").value);
+      var e = parseFloat(document.getElementById("e").value);
+      var f = parseFloat(document.getElementById("f").value);
+      var g = parseFloat(document.getElementById("g").value);
+      var h = parseFloat(document.getElementById("h").value);
+      var i = parseFloat(document.getElementById("i").value);
+
+      // Calculando o determinante
+      var determinante = (a * e * i) + (b * f * g) + (c * d * h) - (c * e * g) - (b * d * i) - (a * f * h);
+
+      // Exibindo o resultado
+      document.getElementById("resultado").innerHTML = "O determinante é: " + determinante;
+    }
+  </script>
+</head>
+<body>
+  <h1>Calculadora de Determinante 3x3</h1>
+  
+  <form>
+    <label for="a">Valor de a:</label>
+    <input type="number" id="a" name="a">
+
+    <label for="b">Valor de b:</label>
+    <input type="number" id="b" name="b">
+
+    <label for="c">Valor de c:</label>
+    <input type="number" id="c" name="c"><br><br>
+
+    <label for="d">Valor de d:</label>
+    <input type="number" id="d" name="d">
+
+    <label for="e">Valor de e:</label>
+    <input type="number" id="e" name="e">
+
+    <label for="f">Valor de f:</label>
+    <input type="number" id="f" name="f"><br><br>
+
+    <label for="g">Valor de g:</label>
+    <input type="number" id="g" name="g">
+
+    <label for="h">Valor de h:</label>
+    <input type="number" id="h" name="h">
+
+    <label for="i">Valor de i:</label>
+    <input type="number" id="i" name="i"><br><br>
+
+    <input type="button" value="Calcular Determinante" onclick="calcularDeterminante()"><br><br>
+  </form>
+
+  <div id="resultado"></div>
+</body>
+</html>

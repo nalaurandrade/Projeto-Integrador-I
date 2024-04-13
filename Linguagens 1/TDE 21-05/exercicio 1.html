@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Números</title>
+  <script>
+    function calcular() {
+      var numeros = [];
+      var pares = 0;
+      var impares = 0;
+      var maior = Number.MIN_SAFE_INTEGER;
+      var menor = Number.MAX_SAFE_INTEGER;
+      var soma = 0;
+      var media = 0;
+
+      for (var i = 1; i <= 5; i++) {
+        var input = document.getElementById('numero' + i);
+        var numero = parseInt(input.value);
+
+        numeros.push(numero);
+        soma += numero;
+
+        if (numero % 2 === 0) {
+          pares++;
+        } else {
+          impares++;
+        }
+
+        if (numero > maior) {
+          maior = numero;
+        }
+
+        if (numero < menor) {
+          menor = numero;
+        }
+      }
+
+      media = soma / 5;
+
+      document.getElementById('resultado-pares').textContent = pares;
+      document.getElementById('resultado-impares').textContent = impares;
+      document.getElementById('resultado-maior').textContent = maior;
+      document.getElementById('resultado-menor').textContent = menor;
+      document.getElementById('resultado-soma').textContent = soma;
+      document.getElementById('resultado-media').textContent = media;
+    }
+  </script>
+</head>
+<body>
+  <h1>Calculadora de Números</h1>
+
+  <form>
+    <label for="numero1">Número 1:</label>
+    <input type="number" id="numero1"><br>
+
+    <label for="numero2">Número 2:</label>
+    <input type="number" id="numero2"><br>
+
+    <label for="numero3">Número 3:</label>
+    <input type="number" id="numero3"><br>
+
+    <label for="numero4">Número 4:</label>
+    <input type="number" id="numero4"><br>
+
+    <label for="numero5">Número 5:</label>
+    <input type="number" id="numero5"><br>
+
+    <button type="button" onclick="calcular()">Calcular</button>
+  </form>
+
+  <h2>Resultados:</h2>
+
+  <p>Números pares: <span id="resultado-pares"></span></p>
+  <p>Números ímpares: <span id="resultado-impares"></span></p>
+  <p>Maior número: <span id="resultado-maior"></span></p>
+  <p>Menor número: <span id="resultado-menor"></span></p>
+  <p>Soma: <span id="resultado-soma"></span></p>
+  <p>Média: <span id="resultado-media"></span></p>
+</body>
+</html>

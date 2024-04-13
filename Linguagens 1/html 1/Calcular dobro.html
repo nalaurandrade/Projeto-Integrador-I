@@ -1,0 +1,53 @@
+<html>
+
+<head>
+
+<script>
+
+function calcularDobro(){
+
+ let numero = document.getElementById('idNumero').value;
+
+ document.getElementById('resposta').innerHTML 
+
+ = `O dobro de ${numero} é ${numero*2}`;
+
+ //comando acima lê o numero digitado na caixinha
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form>
+
+<input type="text" 
+
+    name="txtNumero"
+
+  id="idNumero"
+
+  placeholder="Digite um nro"
+
+/>
+
+
+
+<button type="button"
+
+onclick="calcularDobro()">
+
+Calcular
+
+</button>
+
+<h1 id="resposta"></h1>
+
+</form>
+
+</body>
+
+</html>

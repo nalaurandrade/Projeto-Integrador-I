@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de IMC</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .form-container {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    
+    .form-container input[type="text"],
+    .form-container input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: dodgerblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de IMC</h1>
+  
+  <div class="form-container">
+    <label for="weight">Peso (kg):</label>
+    <input type="number" id="weight" placeholder="Digite o peso" required>
+    
+    <label for="height">Altura (cm):</label>
+    <input type="number" id="height" placeholder="Digite a altura" required>
+    
+    <button onclick="calculateBMI()">Calcular IMC</button>
+    
+    <div class="result" id="result"></div>
+  </div>
+  
+  <script>
+    function calculateBMI() {
+      var weightInput = document.getElementById("weight");
+      var heightInput = document.getElementById("height");
+      var resultDiv = document.getElementById("result");
+      
+      var weight = parseFloat(weightInput.value);
+      var height = parseFloat(heightInput.value) / 100; // Convertendo para metros
+      
+      if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+        resultDiv.innerText = "Valores inválidos";
+        return;
+      }
+      
+      var bmi = weight / (height * height);
+      resultDiv.innerText = "Seu IMC é: " + bmi.toFixed(2);
+    }
+  </script>
+</body>
+</html>

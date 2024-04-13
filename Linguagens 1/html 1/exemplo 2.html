@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+
+
+</head>
+
+<body>
+
+<script>
+
+let nome = window.prompt("Digite seu nome:");
+document.write(`<h1>Olá ${nome}</h1>`);
+
+let idade = window.prompt("Digite sua idade:");
+document.write(`<h1>Idade digitada foi ${idade}</h1>`);
+alert ('Sua idade e');
+if(idade >= 0 && idade <= 4) 
+  alert("Não existe categoria");
+if(idade >= 5 && idade <= 7) 
+  alert("Voce e infantil A");
+else if(idade >= 8 && idade <= 10)
+     alert("Voce e infantil B");
+else if(idade >=11 && idade<=13)
+	 alert("Voce e juvenil A");
+else if(idade >=14 && idade<=17)
+     alert("Voce e juvenil B");
+else if(idade>=18)
+alert("Voce e adulto");
+//comentario
+//&& é da LOGICA
+
+alert (`dobro da sua idade e ${idade*2}`);
+</script>
+</body>
+</html>
